@@ -2,9 +2,9 @@
 
 Screenwriter removes the default WordPress text editor and replaces it with its own multi-section solution. It allows you to manually create different text sections for each post, with each section comprising of an individual title input and a WYSIWG for body text.
 
-It’s the perfect solution to split, structure, organise post content. For complex theme layouts this is a great alternative to putting HTML directly into the WYSIWYG editor. Key layout markup can be handled in the template files, while different sections are created to handle the location and context of how post content is displayed.
+It's the perfect solution to split, structure, organise post content. For complex theme layouts this is a great alternative to putting HTML directly into the WYSIWYG editor. Key layout markup can be handled in the template files, while different sections are created to handle the location and context of how post content is displayed.
 
-Screenwriter is developer friendly and can be integrated into a theme in a variety of ways. It’s more powerful features are flexible enough to allow for a range of possibilities and customisation to fit a project’s needs.
+Screenwriter is developer friendly and can be integrated into a theme in a variety of ways. It's more powerful features are flexible enough to allow for a range of possibilities and customisation to fit a project's needs.
 
 Features include the ability too:
 
@@ -27,7 +27,7 @@ Like the default WordPress WYSIWYG editor, Screenwriter uses the [TinyMCE](http:
 To start using Screenwriter you must have a working version of WordPress (with an activated theme) already installed. To install the Screenwriter plugin:
 
 1. Upload the Screenwriter folder to the plugin directory(/wp-content/plugins) on your server via FTP or use the WordPress plugin installer.
-2. Activate the plugin by clicking “Activate”.
+2. Activate the plugin by clicking "Activate".
 3. In your themes functions.php file you need to create a new Screenwriter instance, see the Screenwriter_admin() documentation for further instructions.
 4. Start using Screenwriter by editing posts, pages or custom post types and entering your content.
 
@@ -61,17 +61,17 @@ Default: *none*
 **$params** *(array)* *(optional)*
 An array of specified styling and markup parameters to be used when outputted as HTML. This provides a styling framework, however this may prove restrictive during advanced development. It might be more appropriate to output the data manually using the get_screenwriter() function. The styling options are:
 
-* before – HTML before the item, typically an opening tag. Defaults to *“<section>”*.
-* after – HTML after the item, typically a closing tag. Defaults to *“</section>”*.
-* before_title – HYML before the item title, typically an opening tag. Defaults to *“<h1>”*.
-* after_title – HTML after the item title, typically a closing tag. Defaults to *“</h1>”*.
+* before – HTML before the item, typically an opening tag. Defaults to *"&lt;section&gt;"*.
+* after – HTML after the item, typically a closing tag. Defaults to *"&lt;/section&gt;"*.
+* before_title – HYML before the item title, typically an opening tag. Defaults to *"&lt;h1&gt;"*.
+* after_title – HTML after the item title, typically a closing tag. Defaults to *"&lt;/h1&gt;"*.
 
 Default: *array()*
 
 **$key** *(string)* *(optional)*
 A string value specifying the unique key used to save data to the WordPress post_meta table. A unique key is required to separate data from different Screenwriter instances, preventing possible conflicts.
 
-Default: *‘sc_screenwriter’*
+Default: *"sc_screenwriter"*
 
 ###Examples
 
@@ -105,7 +105,7 @@ Default: *none*
 **$key** *(string)* *(optional)*
 A string value specifying the unique key used to save data to the WordPress post_meta table. A unique key is required to separate data from different Screenwriter instances, preventing possible conflicts.
 
-Default: *‘sc_screenwriter’*
+Default: *"sc_screenwriter"*
 
 ###Return Value
 
@@ -125,7 +125,7 @@ Get the Screenwriter data object for the post with the id of 5.
 
 ###Notes
 
-* Values can also be accessed manually using WordPress’s get_post_meta() function and passing *‘sc_screenwriter’* (or a custom key value) as the specified key.
+* Values can also be accessed manually using WordPress's get_post_meta() function and passing *"sc_screenwriter"* (or a custom key value) as the specified key.
 
 ##Documentation – Admin Class
 
@@ -140,18 +140,18 @@ Screenwriter instances can be created manually using the Screenwriter_admin() cl
 **$params** *(array)* *(optional)*
 An array of specified configuration values for the Screenwriter instance. This provides a framework for how the instance should behave. The configuration options are:
 
-* **post_types** – an array of post types to be displayed on. Defaults to array(“post”).
-* **title** – a string to display as the metabox title. Defaults to “Page Content”.
-* **priority** – priority level of the metabox (default, core, high, low). Defaults to “default”.
-* **context** – position of the metabox (normal, side, advanced). Defaults to “side”.
-* **sections** – an array of configuration arrays (key and label), outlining section structure. Defaults to array(“post”).
+* **post_types** – an array of post types to be displayed on. Defaults to array("post").
+* **title** – a string to display as the metabox title. Defaults to "Page Content".
+* **priority** – priority level of the metabox (default, core, high, low). Defaults to "default".
+* **context** – position of the metabox (normal, side, advanced). Defaults to "side".
+* **sections** – an array of configuration arrays (key and label), outlining section structure. Defaults to array("post").
 
 Default: *array()*
 
 **$key** *(string)* *(optional)*
 A string value specifying the unique key used to save data to the WordPress post_meta table. A unique key is required to separate data from different Screenwriter instances, preventing possible conflicts.
 
-Default: *‘sc_screenwriter’*
+Default: *"sc_screenwriter"*
 
 ###Examples
 
@@ -172,7 +172,6 @@ Customise the default Screenwriter instance to display two content sections.
         );
 
         new Screenwriter_admin( $args );
-    
     ?>
 
 ###Notes

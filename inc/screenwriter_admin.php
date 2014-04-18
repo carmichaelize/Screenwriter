@@ -95,25 +95,36 @@ class Screenwriter_admin extends Screenwriter {
 
 	public function load_assets(){
 
-		//Load CSS
-		wp_register_style( 'sc_screenwriter_style', SCREENWRITER_URL.'/css/style.css' );
-		wp_enqueue_style( 'sc_screenwriter_style' );
+		global $pagenow, $typenow, $wp_version;
 
-		//Load New TinyMCE Plugin JS (http://www.tinymce.com/wiki.php/Configuration)
-		wp_register_script( 'sc_tinymce', SCREENWRITER_URL.'/js/tinymce/tinymce.min.js', false, false, true );
-		wp_enqueue_script('sc_tinymce');
+    	if( in_array( $typenow, $this->options->post_types ) && ( $pagenow == "post.php" || $pagenow == "post-new.php" ) ){
 
-		//Load JS
-		wp_register_script( 'sc_screenwriter_script', SCREENWRITER_URL.'/js/script.js', false, false, true );
-		wp_enqueue_script('sc_screenwriter_script');
+    		//Load CSS
+			if( (float)$wp_version < 3.9 ){
+				wp_register_style( 'sc_screenwriter_style', SCREENWRITER_URL.'/css/style_legacy.css' );
+			} else {
+				wp_register_style( 'sc_screenwriter_style', SCREENWRITER_URL.'/css/style.css' );
+			}
+			wp_enqueue_style( 'sc_screenwriter_style' );
 
-		//Pass Dynamic Varaibles
-		$js_vars = array(
-			'selector' => 'sc_screenwriter',
-			'directory' => SCREENWRITER_URL,
-			'config' => $this->options->config
-		);
-		wp_localize_script( 'sc_screenwriter_script', 'screenwriter_js_object', $js_vars );
+			//Load New TinyMCE Plugin JS (http://www.tinymce.com/wiki.php/Configuration)
+			wp_register_script( 'sc_tinymce', SCREENWRITER_URL.'/js/tinymce/tinymce.min.js', false, false, true );
+			wp_enqueue_script('sc_tinymce');
+
+			//Load JS
+			wp_register_script( 'sc_screenwriter_script', SCREENWRITER_URL.'/js/script.js', false, false, true );
+			wp_enqueue_script('sc_screenwriter_script');
+
+			//Pass Dynamic Varaibles
+			$js_vars = array(
+				'wp_version' => (float)$wp_version,
+				'selector' => 'sc_screenwriter',
+				'directory' => SCREENWRITER_URL,
+				'config' => $this->options->config
+			);
+			wp_localize_script( 'sc_screenwriter_script', 'screenwriter_js_object', $js_vars );
+
+		}
 
 
 	}
@@ -122,7 +133,7 @@ class Screenwriter_admin extends Screenwriter {
 
 		global $_wp_post_type_features;
 	    $feature = "editor";
-	    foreach($this->options->post_types as $post_type){
+	    foreach( $this->options->post_types as $post_type ){
 		    if( !isset($_wp_post_type_features[$post_type]) ){
 
 		    } elseif ( isset($_wp_post_type_features[$post_type][$feature]) ){

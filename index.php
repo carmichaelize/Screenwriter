@@ -25,25 +25,25 @@ include_once('inc/screenwriter_admin.php');
 ==================================================*/
 
 	//Default Usage
-	//new Screenwriter_admin();
+	new Screenwriter_admin();
 
 
 	//Custom Usage
-	// $args = array(
-	// 	'post_types' => array('page', 'post'),
-	// 	'sections'   => array(
-	// 			array(
-	// 				'key'   => 'top_section',
-	// 				'label' => 'Top Section'
-	// 			),
-	// 			array(
-	// 				'key'   => 'bottom_section',
-	// 				'label' => 'Bottom Section'
-	// 			)
-	// 		)
-	// 	);
+	$args = array(
+		'post_types' => array('page', 'post'),
+		'sections'   => array(
+				array(
+					'key'   => 'top_section',
+					'label' => 'Top Section'
+				),
+				array(
+					'key'   => 'bottom_section',
+					'label' => 'Bottom Section'
+				)
+			)
+		);
 
-	//new Screenwriter_admin( $args, 'custom_page_content' );
+	new Screenwriter_admin( $args, 'custom_page_content' );
 
 /*================================================*/
 
