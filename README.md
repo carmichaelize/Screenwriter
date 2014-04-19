@@ -1,8 +1,8 @@
 ##Features
 
-Screenwriter removes the default WordPress text editor and replaces it with its own multi-section solution. It allows you to manually create different text sections for each post, with each section comprising of an individual title input and a WYSIWG for body text.
+Screenwriter removes the default Wordpress text editor and replaces it with its own extended solution. It allows you to manually create different text sections for each post, with each section comprising of an individual title input and WYSIWG editor.
 
-It's the perfect solution to split, structure, organise post content. For complex theme layouts this is a great alternative to putting HTML directly into the WYSIWYG editor. Key layout markup can be handled in the template files, while different sections are created to handle the location and context of how post content is displayed.
+It's the perfect solution to split, structure, organise post content. For complex theme layouts this is a great alternative to putting HTML directly into WYSIWYG editors. Key layout markup can be handled in the template files, while different sections are created to handle the content for these sections and context of how it's to be displayed.
 
 Screenwriter is developer friendly and can be integrated into a theme in a variety of ways. It's more powerful features are flexible enough to allow for a range of possibilities and customisation to fit a project's needs.
 
@@ -21,6 +21,8 @@ A documented API is also provided for further theme integration, development and
 * Specify what post types to be displayed on.
 
 Like the default WordPress WYSIWYG editor, Screenwriter uses the [TinyMCE](http://www.tinymce.com/) WYSIWYG editor, so offers similar functionality and look to the standard editor it replaces.
+
+![Screenwriter](https://raw.githubusercontent.com/carmichaelize/Screenwriter/master/screenshot.jpg)
 
 ##Installation
 
@@ -178,4 +180,8 @@ Customise the default Screenwriter instance to display two content sections.
 
 * If a unique **$key** is not supplied the Screenwriter admin class will override the initial plugin instance with any new configuration set in the **$params** array.
 * Due to some conflicts with the TinyMCE plugin it is not possible to display the default WordPress editor on pages where Screenwriter is in use.
+
+##Licence
+
+(Dual) [GPL](http://www.gnu.org/licenses/gpl.html) & [MIT](http://opensource.org/licenses/MIT)
 

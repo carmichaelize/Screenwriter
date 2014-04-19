@@ -4,7 +4,7 @@
 	Plugin URI: http://www.carmichaelize.co.uk/projects/screenwriter
 	Description: Split page content into into sections.
 	Author: Scott Carmichael
-	Version: 1.0
+	Version: 1.1
 	Author URI: http://www.scarmichael.co.uk
 	Licence: Dual Licensed under GPL & MIT
 	Licence URI: GPL(http://www.gnu.org/licenses/gpl.html) / MIT (http://www.opensource.org/licenses/mit-license.php)
@@ -25,7 +25,7 @@ include_once('inc/screenwriter_admin.php');
 ==================================================*/
 
 	//Default Usage
-	new Screenwriter_admin();
+	//new Screenwriter_admin();
 
 
 	//Custom Usage
