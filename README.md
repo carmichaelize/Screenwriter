@@ -43,7 +43,7 @@ Screenwriter is built with developers in mind and provides a number of ways to i
 * get_screenwriter() – This function will return the Screenwriter data object, giving developers plenty of scope for further development.
 * Screenwriter Admin Class – Multiple Screenwriter instances can be created manually using the screenwriter_admin() class. This allows for more than one instance to be installed (with different configuration options).
 
-Screenwriter uses the [TinyMCE](http://www.tinymce.com/) WYSIWYG editor. For further editor configurations please consult the TinyMCE plugin [documentation](http://www.tinymce.com/).
+For more information check out the [plugin website](http://www.carmichaelize.co.uk/projects/screenwriter/). Screenwriter uses the [TinyMCE](http://www.tinymce.com/) WYSIWYG editor. For further editor configurations please consult the TinyMCE plugin [documentation](http://www.tinymce.com/).
 
 ##Documentation – screenwriter()
 
